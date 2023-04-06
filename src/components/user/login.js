@@ -1,5 +1,12 @@
+import React from "react";
+import { useHistory } from "react-router-dom";
 import { Button, Checkbox, Form, Input } from "antd";
+
+import "./login.less";
+
 const onFinish = (values) => {
+  const history = useHistory();
+  history.push("./");
   console.log("Success:", values);
 };
 const onFinishFailed = (errorInfo) => {
@@ -7,6 +14,7 @@ const onFinishFailed = (errorInfo) => {
 };
 const App = () => (
   <Form
+    className="Login-form"
     name="basic"
     labelCol={{
       span: 8,
